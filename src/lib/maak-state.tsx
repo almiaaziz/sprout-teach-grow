@@ -1,0 +1,13 @@
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { initialChildren } from './maak-data';
+type Child=typeof initialChildren[number];
+type Role='parent'|'teacher'|'admin';
+type Draft={title:string;description:string;subject:string;level:string;price:number;objectives:string;sections:{title:string;lessons:{title:string;type:string}[]}[];status:'Draft'|'Pending review'|'Published'|'Rejected'};
+const defaultDraft:Draft={title:'',description:'',subject:'Mathematics',level:'Middle school',price:25,objectives:'',sections:[{title:'Introduction',lessons:[{title:'Welcome to the course',type:'Video'}]}],status:'Draft'};
+type State={role:Role|null;setRole:(v:Role|null)=>void;children:Child[];addChild:(c:Child)=>void;updateChild:(c:Child)=>void;purchases:string[];purchase:(id:string)=>void;completed:Record<string,string[]>;complete:(child:string,lesson:string)=>void;draft:Draft;setDraft:(d:Draft)=>void;reviewStatus:'Pending review'|'Published'|'Rejected';setReviewStatus:(v:'Pending review'|'Published'|'Rejected')=>void};
+const Context=createContext<State|null>(null);
+export function MaakProvider({children}: {children:ReactNode}){const [role,setRole]=useState<Role|null>(null);const [profiles,setProfiles]=useState<Child[]>(initialChildren);const [purchases,setPurchases]=useState<string[]>(['english-everyday']);const [completed,setCompleted]=useState<Record<string,string[]>>({'youssef':['english-1','english-2','english-3'],'sara':['english-1']});const [draft,setDraft]=useState<Draft>(defaultDraft);const [reviewStatus,setReviewStatus]=useState<'Pending review'|'Published'|'Rejected'>('Pending review');
+useEffect(()=>{try{const saved=localStorage.getItem('maak-demo');if(saved){const s=JSON.parse(saved);setRole(s.role??null);setProfiles(s.profiles??initialChildren);setPurchases(s.purchases??[]);setCompleted(s.completed??{});setDraft(s.draft??defaultDraft);setReviewStatus(s.reviewStatus??'Pending review')}}catch{}},[]);
+useEffect(()=>{try{localStorage.setItem('maak-demo',JSON.stringify({role,profiles,purchases,completed,draft,reviewStatus}))}catch{}},[role,profiles,purchases,completed,draft,reviewStatus]);
+return <Context.Provider value={{role,setRole,children:profiles,addChild:c=>setProfiles(v=>[...v,c]),updateChild:c=>setProfiles(v=>v.map(item=>item.id===c.id?c:item)),purchases,purchase:id=>setPurchases(v=>v.includes(id)?v:[...v,id]),completed,complete:(child,lesson)=>setCompleted(v=>({...v,[child]:[...new Set([...(v[child]??[]),lesson])]})),draft,setDraft,reviewStatus,setReviewStatus}}>{children}</Context.Provider>}
+export function useMaak(){const v=useContext(Context);if(!v)throw new Error('Missing MAAK provider');return v}
