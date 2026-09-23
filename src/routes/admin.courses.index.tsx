@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AdminPage } from "@/components/maak/teacher-admin";
 
-export const Route = createFileRoute("/admin/courses")({
+export const Route = createFileRoute("/admin/courses/")({
   head: () => ({ meta: [
     { title: 'Admin courses — MAAK' }, { name: "description", content: 'MAAK administration workspace.' },
     { property: "og:title", content: 'Admin courses — MAAK' }, { property: "og:description", content: 'MAAK administration workspace.' },
