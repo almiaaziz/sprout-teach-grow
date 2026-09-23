@@ -10,33 +10,545 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as AdminAuditLogsRouteImport } from './routes/admin.audit-logs'
+import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
+import { Route as AdminPaymentsRouteImport } from './routes/admin.payments'
+import { Route as AdminReportsRouteImport } from './routes/admin.reports'
+import { Route as AdminSchoolLevelsRouteImport } from './routes/admin.school-levels'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminSubjectsRouteImport } from './routes/admin.subjects'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as CheckoutCourseIdRouteImport } from './routes/checkout.$courseId'
+import { Route as CoursesIndexRouteImport } from './routes/courses.index'
+import { Route as CoursesIdRouteImport } from './routes/courses.$id'
+import { Route as LearnCourseIdRouteImport } from './routes/learn.$courseId'
+import { Route as ParentCoursesRouteImport } from './routes/parent.courses'
+import { Route as ParentDashboardRouteImport } from './routes/parent.dashboard'
+import { Route as ParentNotificationsRouteImport } from './routes/parent.notifications'
+import { Route as ParentOrdersRouteImport } from './routes/parent.orders'
+import { Route as ParentProfileRouteImport } from './routes/parent.profile'
+import { Route as ParentSettingsRouteImport } from './routes/parent.settings'
+import { Route as PaymentCourseIdRouteImport } from './routes/payment.$courseId'
+import { Route as TeacherDashboardRouteImport } from './routes/teacher.dashboard'
+import { Route as TeacherNotificationsRouteImport } from './routes/teacher.notifications'
+import { Route as TeacherProfileRouteImport } from './routes/teacher.profile'
+import { Route as TeacherSalesRouteImport } from './routes/teacher.sales'
+import { Route as TeacherSettingsRouteImport } from './routes/teacher.settings'
+import { Route as TeacherStudentsRouteImport } from './routes/teacher.students'
+import { Route as TeachersIdRouteImport } from './routes/teachers.$id'
+import { Route as AdminCoursesIndexRouteImport } from './routes/admin.courses.index'
+import { Route as ParentChildrenIndexRouteImport } from './routes/parent.children.index'
+import { Route as ParentChildrenIdRouteImport } from './routes/parent.children.$id'
+import { Route as TeacherCoursesIndexRouteImport } from './routes/teacher.courses.index'
+import { Route as TeacherCoursesNewRouteImport } from './routes/teacher.courses.new'
+import { Route as AdminCoursesPendingIndexRouteImport } from './routes/admin.courses.pending.index'
+import { Route as AdminCoursesPendingIdRouteImport } from './routes/admin.courses.pending.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAuditLogsRoute = AdminAuditLogsRouteImport.update({
+  id: '/admin/audit-logs',
+  path: '/admin/audit-logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
+  id: '/admin/categories',
+  path: '/admin/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminOrdersRoute = AdminOrdersRouteImport.update({
+  id: '/admin/orders',
+  path: '/admin/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
+  id: '/admin/payments',
+  path: '/admin/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReportsRoute = AdminReportsRouteImport.update({
+  id: '/admin/reports',
+  path: '/admin/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSchoolLevelsRoute = AdminSchoolLevelsRouteImport.update({
+  id: '/admin/school-levels',
+  path: '/admin/school-levels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSubjectsRoute = AdminSubjectsRouteImport.update({
+  id: '/admin/subjects',
+  path: '/admin/subjects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutCourseIdRoute = CheckoutCourseIdRouteImport.update({
+  id: '/checkout/$courseId',
+  path: '/checkout/$courseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesIndexRoute = CoursesIndexRouteImport.update({
+  id: '/courses/',
+  path: '/courses/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesIdRoute = CoursesIdRouteImport.update({
+  id: '/courses/$id',
+  path: '/courses/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnCourseIdRoute = LearnCourseIdRouteImport.update({
+  id: '/learn/$courseId',
+  path: '/learn/$courseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentCoursesRoute = ParentCoursesRouteImport.update({
+  id: '/parent/courses',
+  path: '/parent/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentDashboardRoute = ParentDashboardRouteImport.update({
+  id: '/parent/dashboard',
+  path: '/parent/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentNotificationsRoute = ParentNotificationsRouteImport.update({
+  id: '/parent/notifications',
+  path: '/parent/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentOrdersRoute = ParentOrdersRouteImport.update({
+  id: '/parent/orders',
+  path: '/parent/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentProfileRoute = ParentProfileRouteImport.update({
+  id: '/parent/profile',
+  path: '/parent/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentSettingsRoute = ParentSettingsRouteImport.update({
+  id: '/parent/settings',
+  path: '/parent/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentCourseIdRoute = PaymentCourseIdRouteImport.update({
+  id: '/payment/$courseId',
+  path: '/payment/$courseId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherDashboardRoute = TeacherDashboardRouteImport.update({
+  id: '/teacher/dashboard',
+  path: '/teacher/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherNotificationsRoute = TeacherNotificationsRouteImport.update({
+  id: '/teacher/notifications',
+  path: '/teacher/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherProfileRoute = TeacherProfileRouteImport.update({
+  id: '/teacher/profile',
+  path: '/teacher/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherSalesRoute = TeacherSalesRouteImport.update({
+  id: '/teacher/sales',
+  path: '/teacher/sales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherSettingsRoute = TeacherSettingsRouteImport.update({
+  id: '/teacher/settings',
+  path: '/teacher/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherStudentsRoute = TeacherStudentsRouteImport.update({
+  id: '/teacher/students',
+  path: '/teacher/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeachersIdRoute = TeachersIdRouteImport.update({
+  id: '/teachers/$id',
+  path: '/teachers/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCoursesIndexRoute = AdminCoursesIndexRouteImport.update({
+  id: '/admin/courses/',
+  path: '/admin/courses/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentChildrenIndexRoute = ParentChildrenIndexRouteImport.update({
+  id: '/parent/children/',
+  path: '/parent/children/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentChildrenIdRoute = ParentChildrenIdRouteImport.update({
+  id: '/parent/children/$id',
+  path: '/parent/children/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherCoursesIndexRoute = TeacherCoursesIndexRouteImport.update({
+  id: '/teacher/courses/',
+  path: '/teacher/courses/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeacherCoursesNewRoute = TeacherCoursesNewRouteImport.update({
+  id: '/teacher/courses/new',
+  path: '/teacher/courses/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCoursesPendingIndexRoute =
+  AdminCoursesPendingIndexRouteImport.update({
+    id: '/admin/courses/pending/',
+    path: '/admin/courses/pending/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdminCoursesPendingIdRoute = AdminCoursesPendingIdRouteImport.update({
+  id: '/admin/courses/pending/$id',
+  path: '/admin/courses/pending/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/school-levels': typeof AdminSchoolLevelsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/checkout/$courseId': typeof CheckoutCourseIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/learn/$courseId': typeof LearnCourseIdRoute
+  '/parent/courses': typeof ParentCoursesRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/orders': typeof ParentOrdersRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/payment/$courseId': typeof PaymentCourseIdRoute
+  '/teacher/dashboard': typeof TeacherDashboardRoute
+  '/teacher/notifications': typeof TeacherNotificationsRoute
+  '/teacher/profile': typeof TeacherProfileRoute
+  '/teacher/sales': typeof TeacherSalesRoute
+  '/teacher/settings': typeof TeacherSettingsRoute
+  '/teacher/students': typeof TeacherStudentsRoute
+  '/teachers/$id': typeof TeachersIdRoute
+  '/courses/': typeof CoursesIndexRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
+  '/teacher/courses/new': typeof TeacherCoursesNewRoute
+  '/admin/courses/': typeof AdminCoursesIndexRoute
+  '/parent/children/': typeof ParentChildrenIndexRoute
+  '/teacher/courses/': typeof TeacherCoursesIndexRoute
+  '/admin/courses/pending/$id': typeof AdminCoursesPendingIdRoute
+  '/admin/courses/pending/': typeof AdminCoursesPendingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/school-levels': typeof AdminSchoolLevelsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/checkout/$courseId': typeof CheckoutCourseIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/learn/$courseId': typeof LearnCourseIdRoute
+  '/parent/courses': typeof ParentCoursesRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/orders': typeof ParentOrdersRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/payment/$courseId': typeof PaymentCourseIdRoute
+  '/teacher/dashboard': typeof TeacherDashboardRoute
+  '/teacher/notifications': typeof TeacherNotificationsRoute
+  '/teacher/profile': typeof TeacherProfileRoute
+  '/teacher/sales': typeof TeacherSalesRoute
+  '/teacher/settings': typeof TeacherSettingsRoute
+  '/teacher/students': typeof TeacherStudentsRoute
+  '/teachers/$id': typeof TeachersIdRoute
+  '/courses': typeof CoursesIndexRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
+  '/teacher/courses/new': typeof TeacherCoursesNewRoute
+  '/admin/courses': typeof AdminCoursesIndexRoute
+  '/parent/children': typeof ParentChildrenIndexRoute
+  '/teacher/courses': typeof TeacherCoursesIndexRoute
+  '/admin/courses/pending/$id': typeof AdminCoursesPendingIdRoute
+  '/admin/courses/pending': typeof AdminCoursesPendingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/forgot-password': typeof ForgotPasswordRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/payments': typeof AdminPaymentsRoute
+  '/admin/reports': typeof AdminReportsRoute
+  '/admin/school-levels': typeof AdminSchoolLevelsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/subjects': typeof AdminSubjectsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/checkout/$courseId': typeof CheckoutCourseIdRoute
+  '/courses/$id': typeof CoursesIdRoute
+  '/learn/$courseId': typeof LearnCourseIdRoute
+  '/parent/courses': typeof ParentCoursesRoute
+  '/parent/dashboard': typeof ParentDashboardRoute
+  '/parent/notifications': typeof ParentNotificationsRoute
+  '/parent/orders': typeof ParentOrdersRoute
+  '/parent/profile': typeof ParentProfileRoute
+  '/parent/settings': typeof ParentSettingsRoute
+  '/payment/$courseId': typeof PaymentCourseIdRoute
+  '/teacher/dashboard': typeof TeacherDashboardRoute
+  '/teacher/notifications': typeof TeacherNotificationsRoute
+  '/teacher/profile': typeof TeacherProfileRoute
+  '/teacher/sales': typeof TeacherSalesRoute
+  '/teacher/settings': typeof TeacherSettingsRoute
+  '/teacher/students': typeof TeacherStudentsRoute
+  '/teachers/$id': typeof TeachersIdRoute
+  '/courses/': typeof CoursesIndexRoute
+  '/parent/children/$id': typeof ParentChildrenIdRoute
+  '/teacher/courses/new': typeof TeacherCoursesNewRoute
+  '/admin/courses/': typeof AdminCoursesIndexRoute
+  '/parent/children/': typeof ParentChildrenIndexRoute
+  '/teacher/courses/': typeof TeacherCoursesIndexRoute
+  '/admin/courses/pending/$id': typeof AdminCoursesPendingIdRoute
+  '/admin/courses/pending/': typeof AdminCoursesPendingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/admin/audit-logs'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/orders'
+    | '/admin/payments'
+    | '/admin/reports'
+    | '/admin/school-levels'
+    | '/admin/settings'
+    | '/admin/subjects'
+    | '/admin/users'
+    | '/checkout/$courseId'
+    | '/courses/$id'
+    | '/learn/$courseId'
+    | '/parent/courses'
+    | '/parent/dashboard'
+    | '/parent/notifications'
+    | '/parent/orders'
+    | '/parent/profile'
+    | '/parent/settings'
+    | '/payment/$courseId'
+    | '/teacher/dashboard'
+    | '/teacher/notifications'
+    | '/teacher/profile'
+    | '/teacher/sales'
+    | '/teacher/settings'
+    | '/teacher/students'
+    | '/teachers/$id'
+    | '/courses/'
+    | '/parent/children/$id'
+    | '/teacher/courses/new'
+    | '/admin/courses/'
+    | '/parent/children/'
+    | '/teacher/courses/'
+    | '/admin/courses/pending/$id'
+    | '/admin/courses/pending/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/admin/audit-logs'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/orders'
+    | '/admin/payments'
+    | '/admin/reports'
+    | '/admin/school-levels'
+    | '/admin/settings'
+    | '/admin/subjects'
+    | '/admin/users'
+    | '/checkout/$courseId'
+    | '/courses/$id'
+    | '/learn/$courseId'
+    | '/parent/courses'
+    | '/parent/dashboard'
+    | '/parent/notifications'
+    | '/parent/orders'
+    | '/parent/profile'
+    | '/parent/settings'
+    | '/payment/$courseId'
+    | '/teacher/dashboard'
+    | '/teacher/notifications'
+    | '/teacher/profile'
+    | '/teacher/sales'
+    | '/teacher/settings'
+    | '/teacher/students'
+    | '/teachers/$id'
+    | '/courses'
+    | '/parent/children/$id'
+    | '/teacher/courses/new'
+    | '/admin/courses'
+    | '/parent/children'
+    | '/teacher/courses'
+    | '/admin/courses/pending/$id'
+    | '/admin/courses/pending'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/forgot-password'
+    | '/login'
+    | '/register'
+    | '/admin/audit-logs'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/orders'
+    | '/admin/payments'
+    | '/admin/reports'
+    | '/admin/school-levels'
+    | '/admin/settings'
+    | '/admin/subjects'
+    | '/admin/users'
+    | '/checkout/$courseId'
+    | '/courses/$id'
+    | '/learn/$courseId'
+    | '/parent/courses'
+    | '/parent/dashboard'
+    | '/parent/notifications'
+    | '/parent/orders'
+    | '/parent/profile'
+    | '/parent/settings'
+    | '/payment/$courseId'
+    | '/teacher/dashboard'
+    | '/teacher/notifications'
+    | '/teacher/profile'
+    | '/teacher/sales'
+    | '/teacher/settings'
+    | '/teacher/students'
+    | '/teachers/$id'
+    | '/courses/'
+    | '/parent/children/$id'
+    | '/teacher/courses/new'
+    | '/admin/courses/'
+    | '/parent/children/'
+    | '/teacher/courses/'
+    | '/admin/courses/pending/$id'
+    | '/admin/courses/pending/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
+  AdminAuditLogsRoute: typeof AdminAuditLogsRoute
+  AdminCategoriesRoute: typeof AdminCategoriesRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminOrdersRoute: typeof AdminOrdersRoute
+  AdminPaymentsRoute: typeof AdminPaymentsRoute
+  AdminReportsRoute: typeof AdminReportsRoute
+  AdminSchoolLevelsRoute: typeof AdminSchoolLevelsRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminSubjectsRoute: typeof AdminSubjectsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  CheckoutCourseIdRoute: typeof CheckoutCourseIdRoute
+  CoursesIdRoute: typeof CoursesIdRoute
+  LearnCourseIdRoute: typeof LearnCourseIdRoute
+  ParentCoursesRoute: typeof ParentCoursesRoute
+  ParentDashboardRoute: typeof ParentDashboardRoute
+  ParentNotificationsRoute: typeof ParentNotificationsRoute
+  ParentOrdersRoute: typeof ParentOrdersRoute
+  ParentProfileRoute: typeof ParentProfileRoute
+  ParentSettingsRoute: typeof ParentSettingsRoute
+  PaymentCourseIdRoute: typeof PaymentCourseIdRoute
+  TeacherDashboardRoute: typeof TeacherDashboardRoute
+  TeacherNotificationsRoute: typeof TeacherNotificationsRoute
+  TeacherProfileRoute: typeof TeacherProfileRoute
+  TeacherSalesRoute: typeof TeacherSalesRoute
+  TeacherSettingsRoute: typeof TeacherSettingsRoute
+  TeacherStudentsRoute: typeof TeacherStudentsRoute
+  TeachersIdRoute: typeof TeachersIdRoute
+  CoursesIndexRoute: typeof CoursesIndexRoute
+  ParentChildrenIdRoute: typeof ParentChildrenIdRoute
+  TeacherCoursesNewRoute: typeof TeacherCoursesNewRoute
+  AdminCoursesIndexRoute: typeof AdminCoursesIndexRoute
+  ParentChildrenIndexRoute: typeof ParentChildrenIndexRoute
+  TeacherCoursesIndexRoute: typeof TeacherCoursesIndexRoute
+  AdminCoursesPendingIdRoute: typeof AdminCoursesPendingIdRoute
+  AdminCoursesPendingIndexRoute: typeof AdminCoursesPendingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +560,323 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/audit-logs': {
+      id: '/admin/audit-logs'
+      path: '/admin/audit-logs'
+      fullPath: '/admin/audit-logs'
+      preLoaderRoute: typeof AdminAuditLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/categories': {
+      id: '/admin/categories'
+      path: '/admin/categories'
+      fullPath: '/admin/categories'
+      preLoaderRoute: typeof AdminCategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/orders': {
+      id: '/admin/orders'
+      path: '/admin/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AdminOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/payments': {
+      id: '/admin/payments'
+      path: '/admin/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AdminPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reports': {
+      id: '/admin/reports'
+      path: '/admin/reports'
+      fullPath: '/admin/reports'
+      preLoaderRoute: typeof AdminReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/school-levels': {
+      id: '/admin/school-levels'
+      path: '/admin/school-levels'
+      fullPath: '/admin/school-levels'
+      preLoaderRoute: typeof AdminSchoolLevelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/subjects': {
+      id: '/admin/subjects'
+      path: '/admin/subjects'
+      fullPath: '/admin/subjects'
+      preLoaderRoute: typeof AdminSubjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/$courseId': {
+      id: '/checkout/$courseId'
+      path: '/checkout/$courseId'
+      fullPath: '/checkout/$courseId'
+      preLoaderRoute: typeof CheckoutCourseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/': {
+      id: '/courses/'
+      path: '/courses'
+      fullPath: '/courses/'
+      preLoaderRoute: typeof CoursesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses/$id': {
+      id: '/courses/$id'
+      path: '/courses/$id'
+      fullPath: '/courses/$id'
+      preLoaderRoute: typeof CoursesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn/$courseId': {
+      id: '/learn/$courseId'
+      path: '/learn/$courseId'
+      fullPath: '/learn/$courseId'
+      preLoaderRoute: typeof LearnCourseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/courses': {
+      id: '/parent/courses'
+      path: '/parent/courses'
+      fullPath: '/parent/courses'
+      preLoaderRoute: typeof ParentCoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/dashboard': {
+      id: '/parent/dashboard'
+      path: '/parent/dashboard'
+      fullPath: '/parent/dashboard'
+      preLoaderRoute: typeof ParentDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/notifications': {
+      id: '/parent/notifications'
+      path: '/parent/notifications'
+      fullPath: '/parent/notifications'
+      preLoaderRoute: typeof ParentNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/orders': {
+      id: '/parent/orders'
+      path: '/parent/orders'
+      fullPath: '/parent/orders'
+      preLoaderRoute: typeof ParentOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/profile': {
+      id: '/parent/profile'
+      path: '/parent/profile'
+      fullPath: '/parent/profile'
+      preLoaderRoute: typeof ParentProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/settings': {
+      id: '/parent/settings'
+      path: '/parent/settings'
+      fullPath: '/parent/settings'
+      preLoaderRoute: typeof ParentSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payment/$courseId': {
+      id: '/payment/$courseId'
+      path: '/payment/$courseId'
+      fullPath: '/payment/$courseId'
+      preLoaderRoute: typeof PaymentCourseIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/dashboard': {
+      id: '/teacher/dashboard'
+      path: '/teacher/dashboard'
+      fullPath: '/teacher/dashboard'
+      preLoaderRoute: typeof TeacherDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/notifications': {
+      id: '/teacher/notifications'
+      path: '/teacher/notifications'
+      fullPath: '/teacher/notifications'
+      preLoaderRoute: typeof TeacherNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/profile': {
+      id: '/teacher/profile'
+      path: '/teacher/profile'
+      fullPath: '/teacher/profile'
+      preLoaderRoute: typeof TeacherProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/sales': {
+      id: '/teacher/sales'
+      path: '/teacher/sales'
+      fullPath: '/teacher/sales'
+      preLoaderRoute: typeof TeacherSalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/settings': {
+      id: '/teacher/settings'
+      path: '/teacher/settings'
+      fullPath: '/teacher/settings'
+      preLoaderRoute: typeof TeacherSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/students': {
+      id: '/teacher/students'
+      path: '/teacher/students'
+      fullPath: '/teacher/students'
+      preLoaderRoute: typeof TeacherStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teachers/$id': {
+      id: '/teachers/$id'
+      path: '/teachers/$id'
+      fullPath: '/teachers/$id'
+      preLoaderRoute: typeof TeachersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/courses/': {
+      id: '/admin/courses/'
+      path: '/admin/courses'
+      fullPath: '/admin/courses/'
+      preLoaderRoute: typeof AdminCoursesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/children/': {
+      id: '/parent/children/'
+      path: '/parent/children'
+      fullPath: '/parent/children/'
+      preLoaderRoute: typeof ParentChildrenIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parent/children/$id': {
+      id: '/parent/children/$id'
+      path: '/parent/children/$id'
+      fullPath: '/parent/children/$id'
+      preLoaderRoute: typeof ParentChildrenIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/courses/': {
+      id: '/teacher/courses/'
+      path: '/teacher/courses'
+      fullPath: '/teacher/courses/'
+      preLoaderRoute: typeof TeacherCoursesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teacher/courses/new': {
+      id: '/teacher/courses/new'
+      path: '/teacher/courses/new'
+      fullPath: '/teacher/courses/new'
+      preLoaderRoute: typeof TeacherCoursesNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/courses/pending/': {
+      id: '/admin/courses/pending/'
+      path: '/admin/courses/pending'
+      fullPath: '/admin/courses/pending/'
+      preLoaderRoute: typeof AdminCoursesPendingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/courses/pending/$id': {
+      id: '/admin/courses/pending/$id'
+      path: '/admin/courses/pending/$id'
+      fullPath: '/admin/courses/pending/$id'
+      preLoaderRoute: typeof AdminCoursesPendingIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
+  AdminAuditLogsRoute: AdminAuditLogsRoute,
+  AdminCategoriesRoute: AdminCategoriesRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminOrdersRoute: AdminOrdersRoute,
+  AdminPaymentsRoute: AdminPaymentsRoute,
+  AdminReportsRoute: AdminReportsRoute,
+  AdminSchoolLevelsRoute: AdminSchoolLevelsRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminSubjectsRoute: AdminSubjectsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  CheckoutCourseIdRoute: CheckoutCourseIdRoute,
+  CoursesIdRoute: CoursesIdRoute,
+  LearnCourseIdRoute: LearnCourseIdRoute,
+  ParentCoursesRoute: ParentCoursesRoute,
+  ParentDashboardRoute: ParentDashboardRoute,
+  ParentNotificationsRoute: ParentNotificationsRoute,
+  ParentOrdersRoute: ParentOrdersRoute,
+  ParentProfileRoute: ParentProfileRoute,
+  ParentSettingsRoute: ParentSettingsRoute,
+  PaymentCourseIdRoute: PaymentCourseIdRoute,
+  TeacherDashboardRoute: TeacherDashboardRoute,
+  TeacherNotificationsRoute: TeacherNotificationsRoute,
+  TeacherProfileRoute: TeacherProfileRoute,
+  TeacherSalesRoute: TeacherSalesRoute,
+  TeacherSettingsRoute: TeacherSettingsRoute,
+  TeacherStudentsRoute: TeacherStudentsRoute,
+  TeachersIdRoute: TeachersIdRoute,
+  CoursesIndexRoute: CoursesIndexRoute,
+  ParentChildrenIdRoute: ParentChildrenIdRoute,
+  TeacherCoursesNewRoute: TeacherCoursesNewRoute,
+  AdminCoursesIndexRoute: AdminCoursesIndexRoute,
+  ParentChildrenIndexRoute: ParentChildrenIndexRoute,
+  TeacherCoursesIndexRoute: TeacherCoursesIndexRoute,
+  AdminCoursesPendingIdRoute: AdminCoursesPendingIdRoute,
+  AdminCoursesPendingIndexRoute: AdminCoursesPendingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
